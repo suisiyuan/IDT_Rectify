@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
+<TS version="2.1" language="zh_CN">
+<context>
+    <name>Widget</name>
+    <message>
+        <location filename="widget.ui" line="14"/>
+        <source>钻孔电视校正工具</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="widget.ui" line="30"/>
+        <source>高度矫正</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="widget.ui" line="38"/>
+        <source>当前高度</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="widget.ui" line="45"/>
+        <source>实际高度</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="widget.ui" line="55"/>
+        <source>开始</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="widget.ui" line="65"/>
+        <source> 矫正</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="widget.ui" line="79"/>
+        <source>连接</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="widget.ui" line="92"/>
+        <source>白平衡</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="widget.ui" line="98"/>
+        <source> 打开</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="widget.ui" line="105"/>
+        <source>关闭</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="widget.ui" line="113"/>
+        <source>罗盘矫正</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="widget.ui" line="122"/>
+        <source>罗盘偏移：</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="widget.ui" line="139"/>
+        <source>矫正</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="widget.ui" line="147"/>
+        <source>版本</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="widget.ui" line="153"/>
+        <source>版本号：</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="widget.ui" line="174"/>
+        <source>SHA1：</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="widget.ui" line="181"/>
+        <source>获取</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="widget.cpp" line="38"/>
+        <location filename="widget.cpp" line="149"/>
+        <location filename="widget.cpp" line="177"/>
+        <location filename="widget.cpp" line="196"/>
+        <location filename="widget.cpp" line="216"/>
+        <source>Connect failed</source>
+        <translation type="unfinished">连接失败</translation>
+    </message>
+    <message>
+        <location filename="widget.cpp" line="38"/>
+        <source>Connnot connect to encoder(192.168.1.7)</source>
+        <translation type="unfinished">无法连接到编码器（192.168.1.7）</translation>
+    </message>
+    <message>
+        <location filename="widget.cpp" line="43"/>
+        <source>Disconnect</source>
+        <translation type="unfinished">断开</translation>
+    </message>
+    <message>
+        <location filename="widget.cpp" line="51"/>
+        <source>Connect</source>
+        <translation type="unfinished">连接</translation>
+    </message>
+    <message>
+        <location filename="widget.cpp" line="69"/>
+        <source>Stop</source>
+        <translation type="unfinished">停止</translation>
+    </message>
+    <message>
+        <location filename="widget.cpp" line="79"/>
+        <source>Start</source>
+        <translation type="unfinished">开始</translation>
+    </message>
+    <message>
+        <location filename="widget.cpp" line="91"/>
+        <location filename="widget.cpp" line="96"/>
+        <source>Rectify failed</source>
+        <translation type="unfinished">矫正失败</translation>
+    </message>
+    <message>
+        <location filename="widget.cpp" line="91"/>
+        <source>Please click start first!</source>
+        <translation type="unfinished">请先点击开始！</translation>
+    </message>
+    <message>
+        <location filename="widget.cpp" line="96"/>
+        <source>Current height connot be 0!</source>
+        <translation type="unfinished">现在高度不能为0！</translation>
+    </message>
+    <message>
+        <location filename="widget.cpp" line="104"/>
+        <source>Write succeeded</source>
+        <translation type="unfinished">写入成功</translation>
+    </message>
+    <message>
+        <location filename="widget.cpp" line="104"/>
+        <source>Write to registry successfully!</source>
+        <translation type="unfinished">写入寄存器成功！</translation>
+    </message>
+    <message>
+        <location filename="widget.cpp" line="133"/>
+        <source>Empty value</source>
+        <translation type="unfinished">空值</translation>
+    </message>
+    <message>
+        <location filename="widget.cpp" line="133"/>
+        <source>The value is empty.</source>
+        <translation type="unfinished">输入值为空。</translation>
+    </message>
+    <message>
+        <location filename="widget.cpp" line="140"/>
+        <source>Invalid value</source>
+        <translation type="unfinished">无效的值</translation>
+    </message>
+    <message>
+        <location filename="widget.cpp" line="140"/>
+        <source>The value is Invalid.</source>
+        <translation type="unfinished">输入值无效。</translation>
+    </message>
+    <message>
+        <location filename="widget.cpp" line="149"/>
+        <location filename="widget.cpp" line="177"/>
+        <location filename="widget.cpp" line="196"/>
+        <location filename="widget.cpp" line="216"/>
+        <source>Connnot connect to probe (192.168.1.10)</source>
+        <translation type="unfinished">无法连接到探头（192.168.1.10）</translation>
+    </message>
+</context>
+</TS>
