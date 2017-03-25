@@ -228,22 +228,24 @@ void Widget::on_getButton_clicked()
             case 0x88:
             {
                 qint32 length = (qint32)data.at(1);
-                quint8 major = (quint8)data.at(5);
-                quint8 minor = (quint8)data.at(4);
-                quint8 patch = (quint8)data.at(3);
-                QString sha1 = QString::fromLocal8Bit(data.mid(3+sizeof(quint32), length-sizeof(quint32)).toHex().toUpper());
+                quint32 version = qFromLittleEndian<qint32>((void *)(data.data()+3));
 
+                quint8 major = (version & 0xFF0000) >> 16;
+                quint8 minor = (version & 0xFF00) >> 8;
+                quint8 patch = (version & 0xFF);
 
-                uchar temp[100] = {0};
-                memcpy(temp, data.data()+2, length+1);
-                CRC crc = crcSlow(temp, length+1);
-                QByteArray array((char *)&crc, 2);
+                QString sha1 = QString::fromLatin1(data.data()+3+sizeof(quint32));
 
-                qDebug() << data.count();
-                qDebug() << data.toHex().toUpper();
-                qDebug() << major << minor << patch;
-                qDebug() << sha1;
-                qDebug() << array.toHex().toUpper();
+//                uchar temp[100] = {0};
+//                memcpy(temp, data.data()+2, length+1);
+//                CRC crc = crcSlow(temp, length+1);
+//                QByteArray array((char *)&crc, 2);
+
+//                qDebug() << data.count();
+//                qDebug() << data.toHex().toUpper();
+//                qDebug() << major << minor << patch;
+//                qDebug() << sha1;
+//                qDebug() << array.toHex().toUpper();
 
                 ui->versionEdit->setText(QString::number(major) + "." + QString::number(minor) + "." + QString::number(patch));
                 ui->sha1Edit->setText(sha1);
