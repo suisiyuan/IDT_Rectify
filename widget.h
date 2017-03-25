@@ -41,5 +41,6 @@ private slots:
     void on_manualButton_clicked();
     void on_shiftButton_clicked();
     void on_getButton_clicked();
+    void on_getShiftButton_clicked();
 };
 

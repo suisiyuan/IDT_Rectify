@@ -35,7 +35,7 @@ void Widget::handleConnectClicked()
         socket->connectToHost("192.168.1.7", 20108);
         if (!socket->waitForConnected(1000))
         {
-            QMessageBox::warning(this, tr("Connect failed"), tr("Connnot connect to encoder(192.168.1.7)"));
+            QMessageBox::warning(this, tr("Connect failed"), tr("Cannot connect to the encoder."));
             return;
         }
         else
@@ -146,7 +146,7 @@ void Widget::on_shiftButton_clicked()
 
     if (!s->waitForConnected(1000))
     {
-        QMessageBox::warning(this, tr("Connect failed"), tr("Connnot connect to probe (192.168.1.10)"));
+        QMessageBox::warning(this, tr("Connect failed"), tr("Cannot connect to the probe."));
     }
     else
     {
@@ -155,13 +155,50 @@ void Widget::on_shiftButton_clicked()
         CRC crc = crcSlow(msg+2, msg[1]+1);
         memcpy(msg+3+msg[1], (uchar *)&crc, sizeof(crc));
 
-        QByteArray array((char *)msg, sizeof(msg));
-        qDebug() << array.toHex().toUpper();
+//        QByteArray array((char *)msg, sizeof(msg));
+//        qDebug() << array.toHex().toUpper();
 
         s->write((char *)msg, sizeof(msg));
     }
 
     s->close();
+    s->deleteLater();
+}
+
+
+void Widget::on_getShiftButton_clicked()
+{
+    QTcpSocket *s = new QTcpSocket();
+    s->connectToHost("192.168.1.10", 20108);
+
+    if (!s->waitForConnected(1000))
+    {
+        QMessageBox::warning(this, tr("Connect failed"), tr("Cannot connect to the probe."));
+    }
+    else
+    {
+        quint8 msg[] = { 0x7E, 0x00, 0x0E, 0x00, 0x00 };
+        CRC crc = crcSlow(msg+2, msg[1]+1);
+        memcpy(msg+3+msg[1], (uchar *)&crc, sizeof(crc));
+        s->write((char *)msg, sizeof(msg));
+    }
+
+    connect(s, &QTcpSocket::readyRead, [this, s]() {
+        QByteArray data = s->readAll();
+        switch ((quint8)data.at(2)) {
+        case 0x8E:
+        {
+            qint32 length = (qint32)data.at(1);
+            float value = qFromLittleEndian<float>((void *)(data.data()+3));
+            ui->shiftEdit->setText(QString::number(value));
+            break;
+        }
+        default:
+            break;
+        }
+        s->close();
+        s->deleteLater();
+    });
 }
 
 
@@ -174,7 +211,7 @@ void Widget::on_autoButton_clicked()
 
     if (!s->waitForConnected(1000))
     {
-        QMessageBox::warning(this, tr("Connect failed"), tr("Connnot connect to probe (192.168.1.10)"));
+        QMessageBox::warning(this, tr("Connect failed"), tr("Cannot connect to the probe."));
     }
     else
     {
@@ -183,6 +220,7 @@ void Widget::on_autoButton_clicked()
     }
 
     s->close();
+    s->deleteLater();
 }
 
 // turn off
@@ -193,7 +231,7 @@ void Widget::on_manualButton_clicked()
 
     if (!s->waitForConnected(1000))
     {
-        QMessageBox::warning(this, tr("Connect failed"), tr("Connnot connect to probe (192.168.1.10)"));
+        QMessageBox::warning(this, tr("Connect failed"), tr("Cannot connect to the probe."));
     }
     else
     {
@@ -202,6 +240,7 @@ void Widget::on_manualButton_clicked()
     }
 
     s->close();
+    s->deleteLater();
 }
 
 
@@ -213,7 +252,7 @@ void Widget::on_getButton_clicked()
 
     if (!s->waitForConnected(1000))
     {
-        QMessageBox::warning(this, tr("Connect failed"), tr("Connnot connect to probe (192.168.1.10)"));
+        QMessageBox::warning(this, tr("Connect failed"), tr("Cannot connect to the probe."));
     }
     else
     {
@@ -236,17 +275,6 @@ void Widget::on_getButton_clicked()
 
                 QString sha1 = QString::fromLatin1(data.data()+3+sizeof(quint32));
 
-//                uchar temp[100] = {0};
-//                memcpy(temp, data.data()+2, length+1);
-//                CRC crc = crcSlow(temp, length+1);
-//                QByteArray array((char *)&crc, 2);
-
-//                qDebug() << data.count();
-//                qDebug() << data.toHex().toUpper();
-//                qDebug() << major << minor << patch;
-//                qDebug() << sha1;
-//                qDebug() << array.toHex().toUpper();
-
                 ui->versionEdit->setText(QString::number(major) + "." + QString::number(minor) + "." + QString::number(patch));
                 ui->sha1Edit->setText(sha1);
 
@@ -256,9 +284,9 @@ void Widget::on_getButton_clicked()
                 break;
             }
             s->close();
+            s->deleteLater();
         });
     }
-
-
-
 }
+
+

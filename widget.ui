@@ -27,7 +27,7 @@
      </property>
      <widget class="QWidget" name="heightTab">
       <attribute name="title">
-       <string>高度矫正</string>
+       <string>高度校正</string>
       </attribute>
       <layout class="QHBoxLayout" name="horizontalLayout_2">
        <item>
@@ -62,7 +62,7 @@
             <bool>false</bool>
            </property>
            <property name="text">
-            <string> 矫正</string>
+            <string>校正</string>
            </property>
           </widget>
          </item>
@@ -110,7 +110,7 @@
      </widget>
      <widget class="QWidget" name="compassTab">
       <attribute name="title">
-       <string>罗盘矫正</string>
+       <string>罗盘校正</string>
       </attribute>
       <layout class="QHBoxLayout" name="horizontalLayout_3">
        <item>
@@ -131,12 +131,19 @@
         </widget>
        </item>
        <item>
+        <widget class="QPushButton" name="getShiftButton">
+         <property name="text">
+          <string>获取</string>
+         </property>
+        </widget>
+       </item>
+       <item>
         <widget class="QPushButton" name="shiftButton">
          <property name="enabled">
           <bool>true</bool>
          </property>
          <property name="text">
-          <string>矫正</string>
+          <string>校正</string>
          </property>
         </widget>
        </item>

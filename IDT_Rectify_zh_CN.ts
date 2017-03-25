@@ -55,7 +55,7 @@
     </message>
     <message>
         <location filename="widget.ui" line="113"/>
-        <source>罗盘矫正</source>
+        <source>罗盘校正</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -69,38 +69,39 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="widget.ui" line="147"/>
+        <location filename="widget.ui" line="153"/>
+        <location filename="widget.ui" line="195"/>
+        <source>获取</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="widget.ui" line="161"/>
         <source>版本</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="widget.ui" line="153"/>
+        <location filename="widget.ui" line="167"/>
         <source>版本号：</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="widget.ui" line="174"/>
+        <location filename="widget.ui" line="188"/>
         <source>SHA1：</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="widget.ui" line="181"/>
-        <source>获取</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="widget.cpp" line="38"/>
         <location filename="widget.cpp" line="149"/>
-        <location filename="widget.cpp" line="177"/>
-        <location filename="widget.cpp" line="196"/>
-        <location filename="widget.cpp" line="216"/>
+        <location filename="widget.cpp" line="183"/>
+        <location filename="widget.cpp" line="202"/>
+        <location filename="widget.cpp" line="222"/>
         <source>Connect failed</source>
         <translation type="unfinished">连接失败</translation>
     </message>
     <message>
         <location filename="widget.cpp" line="38"/>
-        <source>Connnot connect to encoder(192.168.1.7)</source>
-        <translation type="unfinished">无法连接到编码器（192.168.1.7）</translation>
+        <source>Cannot connect to the encoder.</source>
+        <translation type="unfinished">无法连接到编码器。</translation>
     </message>
     <message>
         <location filename="widget.cpp" line="43"/>
@@ -126,7 +127,7 @@
         <location filename="widget.cpp" line="91"/>
         <location filename="widget.cpp" line="96"/>
         <source>Rectify failed</source>
-        <translation type="unfinished">矫正失败</translation>
+        <translation type="unfinished">校正失败</translation>
     </message>
     <message>
         <location filename="widget.cpp" line="91"/>
@@ -136,7 +137,7 @@
     <message>
         <location filename="widget.cpp" line="96"/>
         <source>Current height connot be 0!</source>
-        <translation type="unfinished">现在高度不能为0！</translation>
+        <translation type="unfinished">当前高度不能为0！</translation>
     </message>
     <message>
         <location filename="widget.cpp" line="104"/>
@@ -161,7 +162,7 @@
     <message>
         <location filename="widget.cpp" line="140"/>
         <source>Invalid value</source>
-        <translation type="unfinished">无效的值</translation>
+        <translation type="unfinished">无效值</translation>
     </message>
     <message>
         <location filename="widget.cpp" line="140"/>
@@ -170,11 +171,11 @@
     </message>
     <message>
         <location filename="widget.cpp" line="149"/>
-        <location filename="widget.cpp" line="177"/>
-        <location filename="widget.cpp" line="196"/>
-        <location filename="widget.cpp" line="216"/>
-        <source>Connnot connect to probe (192.168.1.10)</source>
-        <translation type="unfinished">无法连接到探头（192.168.1.10）</translation>
+        <location filename="widget.cpp" line="183"/>
+        <location filename="widget.cpp" line="202"/>
+        <location filename="widget.cpp" line="222"/>
+        <source>Cannot connect to the probe.</source>
+        <translation type="unfinished">无法连接到探头。</translation>
     </message>
 </context>
 </TS>
