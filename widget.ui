@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>506</width>
+    <width>526</width>
     <height>160</height>
    </rect>
   </property>
@@ -66,13 +66,6 @@
            </property>
           </widget>
          </item>
-         <item row="0" column="1" colspan="3">
-          <widget class="QLineEdit" name="currentEdit">
-           <property name="enabled">
-            <bool>false</bool>
-           </property>
-          </widget>
-         </item>
          <item row="2" column="0">
           <widget class="QPushButton" name="connectButton">
            <property name="text">
@@ -81,7 +74,42 @@
           </widget>
          </item>
          <item row="1" column="1" colspan="3">
-          <widget class="QDoubleSpinBox" name="doubleSpinBox"/>
+          <widget class="QDoubleSpinBox" name="realSpinBox">
+           <property name="suffix">
+            <string> m</string>
+           </property>
+           <property name="decimals">
+            <number>3</number>
+           </property>
+           <property name="maximum">
+            <double>1000.000000000000000</double>
+           </property>
+           <property name="singleStep">
+            <double>0.100000000000000</double>
+           </property>
+           <property name="value">
+            <double>1.000000000000000</double>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="1" colspan="3">
+          <widget class="QDoubleSpinBox" name="currentSpinBox">
+           <property name="readOnly">
+            <bool>true</bool>
+           </property>
+           <property name="buttonSymbols">
+            <enum>QAbstractSpinBox::NoButtons</enum>
+           </property>
+           <property name="suffix">
+            <string> m</string>
+           </property>
+           <property name="decimals">
+            <number>3</number>
+           </property>
+           <property name="maximum">
+            <double>1000.000000000000000</double>
+           </property>
+          </widget>
          </item>
         </layout>
        </item>

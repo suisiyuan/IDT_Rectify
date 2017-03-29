@@ -30,6 +30,7 @@ void Widget::createConnections()
 void Widget::handleConnectClicked()
 {
     started = false;
+    // 连接
     if (socket->state() == QAbstractSocket::UnconnectedState)
     {
         socket->connectToHost("192.168.1.7", 20108);
@@ -45,14 +46,15 @@ void Widget::handleConnectClicked()
 
         }
     }
+    // 断开
     else if (socket->state() == QAbstractSocket::ConnectedState)
     {
         socket->close();
         ui->connectButton->setText(tr("Connect"));
         ui->startButton->setEnabled(false);
         ui->rectifyButton->setEnabled(false);
-        ui->currentEdit->clear();
-        ui->doubleSpinBox->setValue(0.0);
+        ui->currentSpinBox->setValue(0.0);
+        ui->realSpinBox->setValue(0.0);
     }
 
 
@@ -64,7 +66,7 @@ void Widget::handleStartClicked()
     {
         quint8 startMsg[] = { 0x7E, 0x00, 0x01, 0xD1, 0xF1 };
         socket->write((char *)startMsg, sizeof(startMsg));
-        QObject::connect(socket, SIGNAL(readyRead()), this, SLOT(handleReceiveData));
+//        QObject::connect(socket, SIGNAL(readyRead()), this, SLOT(handleReceiveData));
 
         ui->startButton->setText(tr("Stop"));
         ui->rectifyButton->setEnabled(false);
@@ -74,7 +76,7 @@ void Widget::handleStartClicked()
     {
         quint8 stopMsg[] = { 0x7E, 0x00, 0x02, 0xB2, 0xC1 };
         socket->write((char *)stopMsg, sizeof(stopMsg));
-        QObject::disconnect(socket, SIGNAL(readyRead()), this, SLOT(handleReceiveData));
+//        QObject::disconnect(socket, SIGNAL(readyRead()), this, SLOT(handleReceiveData));
 
         ui->startButton->setText(tr("Start"));
         ui->rectifyButton->setEnabled(true);
@@ -86,23 +88,25 @@ void Widget::handleStartClicked()
 
 void Widget::handleRectifyClicked()
 {
-    if (ui->currentEdit->text().isEmpty())
-    {
-        QMessageBox::warning(this, tr("Rectify failed"), tr("Please click start first!"));
-        return;
-    }
-    else if (ui->currentEdit->text().toInt() == 0)
-    {
-        QMessageBox::warning(this, tr("Rectify failed"), tr("Current height connot be 0!"));
-        return;
-    }
-    else
-    {
-        QSettings setting("HKEY_CURRENT_USER\\SOFTWARE\\ylink\\IDT\\Settings", QSettings::NativeFormat);
-        double ratio = ui->doubleSpinBox->value() / ui->currentEdit->text().toInt();
-        setting.setValue("Declination", QVariant(ratio));
+//    if (ui->currentSpinBox->text().isEmpty())
+//    {
+//        QMessageBox::warning(this, tr("Rectify failed"), tr("Please click start first!"));
+//        return;
+//    }
+//    else if (ui->realSpinBox->text().toInt() == 0)
+//    {
+//        QMessageBox::warning(this, tr("Rectify failed"), tr("Current height connot be 0!"));
+//        return;
+//    }
+//    else
+//    {
+        QSettings setting;
+        qreal currentHeight = ui->currentSpinBox->value();
+        qreal realHeight = ui->realSpinBox->value();
+        qreal ratio = realHeight / currentHeight;
+        setting.setValue("Settings/Declination", ratio);
         QMessageBox::information(this, tr("Write succeeded"), tr("Write to registry successfully!"));
-    }
+//    }
 }
 
 
@@ -113,7 +117,9 @@ void Widget::handleReceiveData()
     {
         case 0x05:
         {
-            ui->currentEdit->setText(QString::number(qFromBigEndian<qint32>((void *)data.mid(3, 4).data())));
+            qint32 pulseNum = qFromBigEndian<qint32>((void *)data.mid(3, 4).data());
+            qreal height = pulseNum / 10000.0f;
+            ui->currentSpinBox->setValue(height);
             break;
         }
 
@@ -217,6 +223,7 @@ void Widget::on_autoButton_clicked()
     {
         quint8 startMsg[] = { 0x7E, 0x01, 0x09, 0x01, 0xB6, 0xB7 };
         s->write((char *)startMsg, sizeof(startMsg));
+        QMessageBox::information(this, tr("Infomation"), tr("Already open."));
     }
 
     s->close();
@@ -237,6 +244,7 @@ void Widget::on_manualButton_clicked()
     {
         quint8 startMsg[] = { 0x7E, 0x01, 0x09, 0x00, 0x97, 0xA7 };
         s->write((char *)startMsg, sizeof(startMsg));
+        QMessageBox::information(this, tr("Infomation"), tr("Already closed."));
     }
 
     s->close();
@@ -290,3 +298,17 @@ void Widget::on_getButton_clicked()
 }
 
 
+
+void Widget::on_tabWidget_currentChanged(int index)
+{
+    qDebug() << index;
+    if (index != 2)
+    {
+        ui->shiftEdit->clear();
+    }
+    if (index != 3)
+    {
+        ui->versionEdit->clear();
+        ui->sha1Edit->clear();
+    }
+}

@@ -7,6 +7,10 @@ int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
 
+    QCoreApplication::setOrganizationName("ylink");
+    QCoreApplication::setApplicationName("IDT");
+
+
     QString locale = QLocale::system().name();
     QTranslator translator;
     translator.load(QString(":/IDT_Rectify_") + locale);

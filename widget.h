@@ -42,5 +42,6 @@ private slots:
     void on_shiftButton_clicked();
     void on_getButton_clicked();
     void on_getShiftButton_clicked();
+    void on_tabWidget_currentChanged(int index);
 };
 

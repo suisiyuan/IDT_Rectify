@@ -10,7 +10,8 @@
     </message>
     <message>
         <location filename="widget.ui" line="30"/>
-        <source>高度矫正</source>
+        <source>高度校正</source>
+        <oldsource>高度矫正</oldsource>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -30,152 +31,163 @@
     </message>
     <message>
         <location filename="widget.ui" line="65"/>
-        <source> 矫正</source>
+        <location filename="widget.ui" line="174"/>
+        <source>校正</source>
+        <oldsource> 矫正</oldsource>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="widget.ui" line="79"/>
+        <location filename="widget.ui" line="72"/>
         <source>连接</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="widget.ui" line="92"/>
+        <location filename="widget.ui" line="120"/>
         <source>白平衡</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="widget.ui" line="98"/>
+        <location filename="widget.ui" line="126"/>
         <source> 打开</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="widget.ui" line="105"/>
+        <location filename="widget.ui" line="133"/>
         <source>关闭</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="widget.ui" line="113"/>
+        <location filename="widget.ui" line="141"/>
         <source>罗盘校正</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="widget.ui" line="122"/>
+        <location filename="widget.ui" line="150"/>
         <source>罗盘偏移：</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="widget.ui" line="139"/>
-        <source>矫正</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="widget.ui" line="153"/>
-        <location filename="widget.ui" line="195"/>
+        <location filename="widget.ui" line="164"/>
+        <location filename="widget.ui" line="216"/>
         <source>获取</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="widget.ui" line="161"/>
+        <location filename="widget.ui" line="182"/>
         <source>版本</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="widget.ui" line="167"/>
+        <location filename="widget.ui" line="188"/>
         <source>版本号：</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="widget.ui" line="188"/>
+        <location filename="widget.ui" line="209"/>
         <source>SHA1：</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="widget.cpp" line="38"/>
-        <location filename="widget.cpp" line="149"/>
-        <location filename="widget.cpp" line="183"/>
-        <location filename="widget.cpp" line="202"/>
-        <location filename="widget.cpp" line="222"/>
+        <location filename="widget.cpp" line="39"/>
+        <location filename="widget.cpp" line="155"/>
+        <location filename="widget.cpp" line="182"/>
+        <location filename="widget.cpp" line="220"/>
+        <location filename="widget.cpp" line="241"/>
+        <location filename="widget.cpp" line="263"/>
         <source>Connect failed</source>
         <translation type="unfinished">连接失败</translation>
     </message>
     <message>
-        <location filename="widget.cpp" line="38"/>
+        <location filename="widget.cpp" line="39"/>
         <source>Cannot connect to the encoder.</source>
         <translation type="unfinished">无法连接到编码器。</translation>
     </message>
     <message>
-        <location filename="widget.cpp" line="43"/>
+        <location filename="widget.cpp" line="44"/>
         <source>Disconnect</source>
         <translation type="unfinished">断开</translation>
     </message>
     <message>
-        <location filename="widget.cpp" line="51"/>
+        <location filename="widget.cpp" line="53"/>
         <source>Connect</source>
         <translation type="unfinished">连接</translation>
     </message>
     <message>
-        <location filename="widget.cpp" line="69"/>
+        <location filename="widget.cpp" line="71"/>
         <source>Stop</source>
         <translation type="unfinished">停止</translation>
     </message>
     <message>
-        <location filename="widget.cpp" line="79"/>
+        <location filename="widget.cpp" line="81"/>
         <source>Start</source>
         <translation type="unfinished">开始</translation>
     </message>
     <message>
-        <location filename="widget.cpp" line="91"/>
-        <location filename="widget.cpp" line="96"/>
         <source>Rectify failed</source>
-        <translation type="unfinished">校正失败</translation>
+        <translation type="obsolete">校正失败</translation>
     </message>
     <message>
-        <location filename="widget.cpp" line="91"/>
         <source>Please click start first!</source>
-        <translation type="unfinished">请先点击开始！</translation>
+        <translation type="obsolete">请先点击开始！</translation>
     </message>
     <message>
-        <location filename="widget.cpp" line="96"/>
         <source>Current height connot be 0!</source>
-        <translation type="unfinished">当前高度不能为0！</translation>
+        <translation type="obsolete">当前高度不能为0！</translation>
     </message>
     <message>
-        <location filename="widget.cpp" line="104"/>
+        <location filename="widget.cpp" line="108"/>
         <source>Write succeeded</source>
         <translation type="unfinished">写入成功</translation>
     </message>
     <message>
-        <location filename="widget.cpp" line="104"/>
+        <location filename="widget.cpp" line="108"/>
         <source>Write to registry successfully!</source>
         <translation type="unfinished">写入寄存器成功！</translation>
     </message>
     <message>
-        <location filename="widget.cpp" line="133"/>
+        <location filename="widget.cpp" line="139"/>
         <source>Empty value</source>
         <translation type="unfinished">空值</translation>
     </message>
     <message>
-        <location filename="widget.cpp" line="133"/>
+        <location filename="widget.cpp" line="139"/>
         <source>The value is empty.</source>
         <translation type="unfinished">输入值为空。</translation>
     </message>
     <message>
-        <location filename="widget.cpp" line="140"/>
+        <location filename="widget.cpp" line="146"/>
         <source>Invalid value</source>
         <translation type="unfinished">无效值</translation>
     </message>
     <message>
-        <location filename="widget.cpp" line="140"/>
+        <location filename="widget.cpp" line="146"/>
         <source>The value is Invalid.</source>
         <translation type="unfinished">输入值无效。</translation>
     </message>
     <message>
-        <location filename="widget.cpp" line="149"/>
-        <location filename="widget.cpp" line="183"/>
-        <location filename="widget.cpp" line="202"/>
-        <location filename="widget.cpp" line="222"/>
+        <location filename="widget.cpp" line="155"/>
+        <location filename="widget.cpp" line="182"/>
+        <location filename="widget.cpp" line="220"/>
+        <location filename="widget.cpp" line="241"/>
+        <location filename="widget.cpp" line="263"/>
         <source>Cannot connect to the probe.</source>
         <translation type="unfinished">无法连接到探头。</translation>
+    </message>
+    <message>
+        <location filename="widget.cpp" line="226"/>
+        <location filename="widget.cpp" line="247"/>
+        <source>Infomation</source>
+        <translation type="unfinished">提示</translation>
+    </message>
+    <message>
+        <location filename="widget.cpp" line="226"/>
+        <source>Already open.</source>
+        <translation type="unfinished">已打开。</translation>
+    </message>
+    <message>
+        <location filename="widget.cpp" line="247"/>
+        <source>Already closed.</source>
+        <translation type="unfinished">已关闭。</translation>
     </message>
 </context>
 </TS>
